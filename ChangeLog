@@ -1,3 +1,11 @@
+2014-08-25  Andreas Schwab <schwab@suse.de>
+
+	[BZ #16657]
+	* nptl/pthread_mutex_destroy.c (__pthread_mutex_destroy): Skip
+	checks when doing elision.
+	* nptl/sysdeps/unix/sysv/linux/x86/pthread_mutex_destroy.c: New
+	file.
+
 2014-08-25  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
 
 	* sysdeps/unix/sysv/linux/powerpc/Makefile [nptl]
