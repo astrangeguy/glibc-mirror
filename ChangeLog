@@ -1,3 +1,19 @@
+2014-10-08  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
+
+	* sysdeps/unix/sysv/linux/not-cancel.h (open_not_cancel): Rewrite to
+	be an inline implementation regardless of library is built within.
+	(open_not_cancel_2): Likewise.
+	(__read_nocancel): Likewise.
+	(__write_nocancel): Likewise.
+	(openat_not_cancel): Likewise.
+	(openat_not_cancel_3): Likewise.
+	(openat64_not_cancel): Likewise.
+	(openat64_not_cancel_3): Likewise.
+	(__close_nocancel): Likewise.
+	(pause_not_cancel): Likewise.
+	(nanosleep_not_cancel): Likewise.
+	(sigsuspend_not_cancel): Likewise.
+
 2014-10-06  Joseph Myers  <joseph@codesourcery.com>
 
 	* sysdeps/unix/make-syscalls.sh (emit_weak_aliases): Condition
