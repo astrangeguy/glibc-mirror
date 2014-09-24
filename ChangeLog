@@ -1,5 +1,17 @@
 2014-10-08  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
 
+	* nptl/Makefile [test-special]: Remove tst-cancel-wrappers rule.
+	[generated]: Likewise.
+	* nptl/tst-cancel-wrappers.sh: Remove file.
+	* nptl/tst-cancel2.c (tf): Add pthread_cancel checks for partial
+	read/write due cancel signal.
+	* nptl/tst-cancel20.c (sh_body): Likewise.
+	(tf_body): Likewise.
+	* nptl/tst-cancel21.c (sh_body): Likewise.
+	(tf_body): Likewise.
+	* nptl/tst-cancel4.c (tf_write): Likewise.
+	(tf_send): Likewise.
+
 	* nptl/pthread_cancel.c (pthread_cancel): Use ANSI prototype.
 	* nptl/pthread_cond_timedwait.c (__pthread_cond_timedwait): Likewise.
 	* nptl/pthread_cond_wait.c (__pthread_cond_wait): Likewise.
