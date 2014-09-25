@@ -1,5 +1,10 @@
 2014-10-08  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
 
+	* sysdeps/unix/sysv/linux/x86_64/cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/libc-cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/librt-cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S: Remove
+
 	* nptl/Makefile [test-special]: Remove tst-cancel-wrappers rule.
 	[generated]: Likewise.
 	* nptl/tst-cancel-wrappers.sh: Remove file.
