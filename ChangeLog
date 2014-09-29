@@ -1,5 +1,18 @@
 2014-10-08  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
 
+	* sysdeps/powerpc/nptl/pthreaddef.h (__pthread_get_ip): Add powerpc32
+	support.
+	* sysdeps/unix/sysv/linux/i386/fcntl.c (__fcntl_nocancel): Remove calls
+	to enable/disable asynchronous cancellation and use call cancellable
+	syscall entrypoint when required.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc32/socket.S (__socket):
+	Likewise.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc32/sysdep-cancel.h (PSEUDO):
+	Likewise.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc32/sysdep.h
+	[SYSCALL_CANCEL_ERROR]: New macro.
+	[SYSCALL_CANCEL_ERRNO]: New macro.
+
 	* sysdeps/unix/sysv/linux/fcntl.c (__fcntl_nocancel): Rewrite to use
 	new cancellation mechanism.
 	* sysdeps/unix/sysv/linux/x86_64/cancellation.S: Remove file.
