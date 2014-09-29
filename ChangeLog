@@ -1,5 +1,29 @@
 2014-10-08  Adhemerval Zanella  <azanella@linux.vnet.ibm.com>
 
+	* sysdeps/unix/sysv/linux/fcntl.c (__fcntl_nocancel): Rewrite to use
+	new cancellation mechanism.
+	* sysdeps/unix/sysv/linux/x86_64/cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/libc-cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/librt-cancellation.S: Remove file.
+	* sysdeps/unix/sysv/linux/x86_64/lowlevellock.h
+	(lll_futex_wait_cancel): New define: cancellable futex wait
+	call.
+	(lll_futex_wake_unlock): New define: futex wake unlock call.
+	(lll_wait_tid): Using cancellable futex wait call.
+	* sysdeps/unix/sysv/linux/x86_64/sysdep-cancel.h (PSEUDO): Likewise.
+	* sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: New file:
+	cancellable syscall entrypoint.
+	* sysdeps/unix/sysv/linux/x86_64/sysdep.h (SYSCALL_CANCEL_ERROR): New
+	define.
+	(SYSCALL_CANCEL_ERRNO): New define.
+	* sysdeps/x64_64/nptl/pthreaddef.h (__pthread_get_ip): New
+	function:
+	return ucontext_t instruction point address.
+	* sysdeps/x86_64/nptl/tcb-offsets.sym [TCB_CANCELING_BITMASK]:
+	Remove.
+	* sysdeps/x86_64/nptl/tls.h (THREAD_ATOMIC_BIT_SET): Remove
+	define.
+
 	* nptl/Makefile [routines]: Add syscall_cancel object.
 	[libpthread-routines]: Remove cancellation object.
 	* nptl/Versions (libc) [GLIBC_PRIVATE]: Add __syscall_cancel,
